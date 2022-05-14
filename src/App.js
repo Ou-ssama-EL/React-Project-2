@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+
+const quotes = [
+  "Never Put Too Much Trust in Friends, Learn How to Use Enemies",
+  "Conceal Your Intentions",
+  "So Much Depends on Reputation – Guard It With Your Life",
+  "Make Other People Come to You – Use Bait if Necessary",
+  "Win Through Your Actions, Never Through Argument",
+  "Infection: Avoid the Unhappy and the Unlucky",
+  "Crush Your Enemy Totally",
+  "Know Who You’re Dealing With – Don’t Offend the Wrong Person"
+];
 
 function App() {
+
+ const [counter, setCounter] = useState(7);;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div onClick={(event) => setCounter(counter + 1)} className="App">
+      {quotes[counter % quotes.length]}
     </div>
   );
 }
